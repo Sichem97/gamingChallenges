@@ -1,0 +1,40 @@
+.flash {
+  background: #f6f9fc;
+  padding: 50px 0;
+}
+
+
+.details {
+  display: flex;
+  align-items: center;
+  padding: 1%;
+}
+
+.show-details {
+  flex: 1;
+  margin-right: 20px;
+}
+
+.show-details h2 {
+  margin-bottom: 10px;
+}
+
+.button-container h4{
+  color: #ff2e51ee;
+}
+
+.button-container p {
+  margin-top: 0;
+  text-align: justify;
+}
+
+.button-container {
+  margin-left: auto;
+}
+.button-container button{
+  color: #fddae0ee;
+  font-size: 20px;
+  background-color: rgba(20, 20, 20, 0.91);
+  border-radius: 5%;
+}
+

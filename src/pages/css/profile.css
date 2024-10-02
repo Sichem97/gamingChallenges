@@ -1,0 +1,59 @@
+.standard {
+    padding: 10%;
+    align-items: center;
+    background-image: url('../../../public//images/Profil/Platinum/Platinum2.jpg');
+    color: #fff;
+    width: 100%;
+    height: auto;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 2%;
+}
+  
+.box_stand {
+    padding: 1% 2%;
+    font-size: 15px;
+}
+
+@media only screen and (min-width: 400px) {
+    .standard {
+        width: 400px;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .standard {
+        width: 768px;
+    }
+}
+
+.premium {
+    align-items: center;
+    background-image: url('../../../public/images/Profil/Premium/Premium.jpg');
+    color: #fff;
+    width: 100%;
+    height: 150px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 2%;
+}
+
+.box_pre {
+    padding: 1% 2%;
+    font-size: 15px;
+}
+
+@media only screen and (min-width: 400px) {
+    .premium {
+        width: 400px;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .premium {
+        width: 768px;
+    }
+}
+

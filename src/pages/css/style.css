@@ -1,0 +1,117 @@
+.hook{
+	margin: 0;
+	padding: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+	font-family: 'Jost', sans-serif;
+	background-image: linear-gradient(rgba(5, 5, 36, 0.8),rgba(5, 5, 36, .8)), url("../../../public/images/ADD/R1.jpg");
+	background-position: center;
+	background-attachment: fixed;
+	background-size: cover;
+	position: relative;
+}
+.main{
+	width: 350px;
+	height: 500px;
+	background: red;
+	overflow: hidden;
+	background-image: linear-gradient(rgba(5, 5, 36, 0.5),rgba(5, 5, 36, .5)), url("../../../public/images/ADD/R1.jpg");
+	background-position: center;
+	background-attachment: fixed;
+	background-size: cover;
+	position: relative;
+	border-radius: 10px;
+	box-shadow: 5px 20px 50px #000;
+}
+#chk{
+	display: none;
+}
+.signup{
+	position: relative;
+	width:100%;
+	height: 100%;
+}
+label{
+	color: rgb(255, 217, 0);
+	font-size: 2.3em;
+	justify-content: center;
+	display: flex;
+	margin: 60px;
+	font-weight: bold;
+	cursor: pointer;
+	transition: .5s ease-in-out;
+}
+input{
+	width: 60%;
+	height: 20px;
+	background: #e0dede;
+	justify-content: center;
+	display: flex;
+	margin: 10px auto;
+	padding: 5px;
+	border: none;
+	outline: none;
+	border-radius: 5px;
+}
+select{
+	width: 60%;
+	height: 20px;
+	background: #e0dede;
+	justify-content: center;
+	display: flex;
+	margin: 20px auto;
+	border: none;
+	outline: none;
+	border-radius: 5px;
+}
+.hook button{
+	width: 60%;
+	height: 40px;
+	margin: 10px auto;
+	justify-content: center;
+	display: block;
+	color: #fff;
+	background: rgba(136, 116, 1, 0.668);
+	font-size: 1em;
+	font-weight: bold;
+	margin-top: 20px;
+	outline: none;
+	border: none;
+	border-radius: 5px;
+	transition: .2s ease-in;
+	cursor: pointer;
+}
+.hook button:hover{
+	background: rgba(253, 215, 0, 0.668)
+}
+.login{
+	height: 560px;
+	background: #484848;
+	border-radius: 60% / 10%;
+	transform: translateY(-180px);
+	transition: .8s ease-in-out;
+}
+.login label{
+	color: rgb(255, 217, 0);
+	transform: scale(.6);
+}
+
+#chk:checked ~ .login{
+	transform: translateY(-500px);
+}
+#chk:checked ~ .login label{
+	transform: scale(1);	
+}
+#chk:checked ~ .signup label{
+	transform: scale(.6);
+}
+.alert{
+	color: #ff3131c5;
+	text-align: center;
+}
+.alertB{
+	color: #0d9200c5;
+	text-align: center;
+}

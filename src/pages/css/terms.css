@@ -1,0 +1,16 @@
+.content_foot{
+    background-image:linear-gradient(rgba(27, 28, 31, 0.8),rgba(27, 28, 31, 0.8));
+    padding: 7% 5%;
+    text-align: center;
+    color:#cdcdcd
+}
+.content_foot h1{
+font-size: 45px;
+padding: 1% 0%;
+}
+.cls{
+    text-align: left;
+    padding: 2% 0%;
+    margin: 1% ;
+    background-image: linear-gradient(rgba(5, 5, 36, 0.8),rgba(5, 5, 36, .8));
+}
