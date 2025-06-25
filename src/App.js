@@ -37,10 +37,10 @@ function App() {
           <Route path='/Cookie' element={<Cookie />} />
           <Route path='/Games' element={<Games />} />
           <Route path='/Health' element={<Health />} />
-          <Route path='/Home' element={<Home />} />
+          <Route path='/' element={<Home />} />
           <Route path='/Individual' element={<Individual />} />
           <Route path='/Login' element={<Login />} />
-          <Route path='/' element={<Payment/>}/>
+          <Route path='/Payment' element={<Payment/>}/>
           <Route path='/Privacy' element={<Privacy />} />
           <Route path='/Premium' element={<Premium productItems={productItems} />} />
           <Route path='/Profil' element={<Profil />} />
