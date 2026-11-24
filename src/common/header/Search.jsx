@@ -1,69 +1,86 @@
-import React,{useState} from "react"
-import { Link } from "react-router-dom"
- 
-export default function Search () {
-  const [MobileMenu, setMobileMenu] = useState(false)
 
-  // fixed Header
-  window.addEventListener("scroll", function () {
-    const search = document.querySelector(".search")
-    search.classList.toggle("active", window.scrollY > 100)
-  })
+import React, { useEffect, useState } from "react";
+import { Link, useLocation } from "react-router-dom";
+
+export default function Search() {
+  const [mobileMenu, setMobileMenu] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const location = useLocation();
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 40);
+    };
+
+    handleScroll();
+    window.addEventListener("scroll", handleScroll, { passive: true });
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  useEffect(() => {
+    setMobileMenu(false);
+  }, [location.pathname]);
+
+  const links = [
+    { name: "Home", path: "/" },
+    { name: "Tournaments", path: "/Chalenges" },
+    { name: "Premium", path: "/Premium" },
+    { name: "Discover", path: "/Games" },
+    { name: "Reviews", path: "/Review" },
+  ];
 
   return (
-    <>
-      <section className='search'>
-      <header className='header'>
-        <div className='container d_flex'>
-          <div className='catgrories d_flex'>
-            
-          </div>
-
-          <div className='navlink'>
-            <ul className={MobileMenu ? "nav-links-MobileMenu" : "link f_flex capitalize"} onClick={() => setMobileMenu(false)}>
-              <li>
-                <Link to='/home'>home</Link>
-              </li>
-              <li>
-                <Link to='/Chalenges'>Tournament</Link>
-              </li>
-              <li>
-                <Link to='/Premium'>Premium</Link>
-              </li>
-              <li>
-                <Link to='/Games'>Discover</Link>
-              </li>
-              <li>
-                <Link to='/Review'>Review</Link>
-              </li>
-            </ul>
-
-            <button className='toggle' onClick={() => setMobileMenu(!MobileMenu)}>
-              {MobileMenu ? <i className='fas fa-times close home-btn'></i> : <i className='fas fa-bars open'></i>}
-            </button>
-          </div>
+    <section className={`search ${scrolled ? "active" : ""}`}>
+      <div className="container c_flex">
+        <div className="logo">
+          <Link to="/">
+            <img
+              src="/images/ADD/logo.jpg"
+              alt="Unique Gamer"
+            />
+          </Link>
         </div>
-      </header>
 
-        <div className='container c_flex'>
-          <div className='logo width '>
-          <Link to='/home'><img src={"../../images/ADD/logo.jpg"} alt='' /></Link>
-          </div>
-
-          <div className='title-box f_flex'>
+        <div className="title-box">
+          <Link to="/">
             <h1>UNIQUE GAMER</h1>
-          </div>
-
-          <div className='icon f_flex width'>
-            
-            <div>
-            <Link to='/Profil'><i className='fa fa-user icon-circle'></i></Link>
-            </div>
-
-          </div>
+          </Link>
+          <span>PLAY. COMPETE. CONQUER.</span>
         </div>
-      </section>
-      
-    </>
-  )
+
+        <nav className={`navlink ${mobileMenu ? "menu-open" : ""}`}>
+          <ul>
+            {links.map((link) => (
+              <li key={link.path}>
+                <Link
+                  to={link.path}
+                  className={
+                    location.pathname === link.path ? "nav-active" : ""
+                  }
+                >
+                  {link.name}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </nav>
+
+        <div className="header-actions">
+          <Link to="/Profil" className="profile-link" aria-label="Profile">
+            <i className="fa fa-user"></i>
+          </Link>
+
+          <button
+            className="toggle"
+            onClick={() => setMobileMenu(!mobileMenu)}
+            aria-label={mobileMenu ? "Close menu" : "Open menu"}
+            aria-expanded={mobileMenu}
+          >
+            <i className={mobileMenu ? "fas fa-times" : "fas fa-bars"}></i>
+          </button>
+        </div>
+      </div>
+    </section>
+  );
 }
